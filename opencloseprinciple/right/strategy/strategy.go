@@ -6,16 +6,13 @@ import (
 )
 
 // Implementasi OCP dengan Polymorphism
-
+// Polimorfisme dalam pemrograman berorientasi objek (OOP) adalah konsep di mana satu antarmuka (interface) dapat memiliki banyak bentuk implementasi.
+// Dengan kata lain, objek yang berbeda dapat diperlakukan secara sama melalui satu antarmuka umum.
 type PaymentProcessor interface {
 	Process(payment *entity.Payment) error
 }
 
 type BankTransfer struct{}
-
-func NewBankTransfer() PaymentProcessor {
-	return &BankTransfer{}
-}
 
 func (b *BankTransfer) Process(payment *entity.Payment) error {
 	fmt.Println("Processing bank transfer...")
@@ -23,10 +20,6 @@ func (b *BankTransfer) Process(payment *entity.Payment) error {
 }
 
 type CreditCard struct{}
-
-func NewCreditCard() PaymentProcessor {
-	return &CreditCard{}
-}
 
 func (c *CreditCard) Process(payment *entity.Payment) error {
 	fmt.Println("Processing credit card payment...")

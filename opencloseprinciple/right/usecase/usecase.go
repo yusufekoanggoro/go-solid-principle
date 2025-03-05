@@ -16,8 +16,8 @@ func NewPaymentUsecase(repo *repository.PaymentRepository) *PaymentUsecase {
 	return &PaymentUsecase{
 		paymentRepository: repo,
 		strategies: map[string]strategy.PaymentProcessor{
-			"bank_transfer": strategy.NewBankTransfer(),
-			"credit_card":   strategy.NewCreditCard(),
+			"bank_transfer": &strategy.BankTransfer{},
+			"credit_card":   &strategy.CreditCard{},
 		},
 	}
 }
