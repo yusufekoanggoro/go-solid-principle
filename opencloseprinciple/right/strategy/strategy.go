@@ -25,7 +25,7 @@ func (b *BankTransfer) Process(payment *entity.Payment) error {
 type CreditCard struct{}
 
 func NewCreditCard() PaymentProcessor {
-	return &BankTransfer{}
+	return &CreditCard{}
 }
 
 func (c *CreditCard) Process(payment *entity.Payment) error {
