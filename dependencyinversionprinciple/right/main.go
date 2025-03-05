@@ -8,7 +8,7 @@ import (
 
 func main() {
 	repo := repository.NewRepository()
-	usease := usecase.NewUserUsecase(repo)
+	usecase := usecase.NewUserUsecase(repo)
 
-	fmt.Println(usease.GetUserName(1)) // Output: User 1 from SQL DB
+	fmt.Println(usecase.GetUserName(1)) // Output: User 1 from SQL DB
 }
