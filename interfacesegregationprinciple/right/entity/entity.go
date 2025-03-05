@@ -1,12 +1,16 @@
 package entity
 
-// Entity
-type User struct {
-	ID   string
-	Name string
+// Workable → Hanya untuk karyawan yang bekerja
+type Workable interface {
+	Work() error
 }
 
-type Order struct {
-	ID     string
-	Amount float64
+// Eatable → Hanya untuk karyawan yang dapat makan di kantin
+type Eatable interface {
+	Eat() error
+}
+
+// Leaveable → Hanya untuk karyawan yang bisa mengambil cuti
+type Leaveable interface {
+	TakeLeave() error
 }
